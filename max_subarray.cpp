@@ -98,7 +98,7 @@ MaxSubArrayInfo GetMaxSubArray(int *buf, int start, int end) {
   return msai;
 }
 
-int main(int argc, char *argv[]) {
+int main_test(int argc, char *argv[]) {
   int n;
   cin >> n;
   int *arr = new int[n];
