@@ -63,6 +63,10 @@ class DoublyLinkedList {
 class SingleLinkedList {
  public:
   struct Node {
+    Node(int k, Node *p) {
+      key = k;
+      next = p;
+    }
     int key;
     Node *next;
   };
@@ -102,7 +106,7 @@ class SingleLinkedList {
   void Reverse() {
     Node *pre = NULL;
     Node *cur = head_;
-    Node *next = cur->next;
+    Node *next = NULL;
     while (cur != NULL) {
       next = cur->next;
       cur->next = pre;
@@ -126,14 +130,13 @@ class SingleLinkedList {
 
  private:
   Node *CreateNode(int a) {
-    Node *p = (Node *)malloc(sizeof(Node));
-    p->key = a;
-    p->next = NULL;
+    Node *p = new Node(a, NULL);
+    if(p == NULL) return NULL;
     return p;
   }
 
   void DeleteNode(Node *p) {
-    free(p);
+    delete p;
   }
  private:
   Node *head_;
