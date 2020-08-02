@@ -34,39 +34,13 @@ void BubbleSort::Sort() {
         arr_[j] = arr_[j + 1];
         arr_[j + 1] = tmp;
 
-        flag = false;
         k = j  + 1;
-      } else {
-        flag = true;
       }
     }
+    //cout << "\ni=" << i << ", k=" << k << " :\n";
     //ShowArray();
-    if (flag) {
-      i = k;
-    }
+    i = k;
   }
-}
-
-vector<int> BubbleSort2(const vector<int> arr) {
-  vector<int> result = arr;
-  int n = result.size();
-  int f = n-1;
-  for (int i = 0; i <= n-2; ++i){
-    int k = f - 1;
-    f = 0;
-    for (int j = 0; j <= k; ++j) {
-      if (result[j] > result[j+1]) {
-        f = j;
-        int tmp = result[j];
-        result[j] = result[j+1];
-        result[j+1] = tmp;
-      }
-    }
-    //cout << "i = " << i << " :\n";
-    //ShowArray(result);
-    if (f == 0) {break;}
-  }
-  return result;
 }
 
 #endif //TMP_HPP_
